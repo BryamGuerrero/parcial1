@@ -1,0 +1,5 @@
+#auth    required    pam_unix.so
+
+#account required    pam_unix.so
+auth required pam_listfile.so onerr=fail item=user sense=deny file=/etc/apache2/denegados.txt
+#Esta línea indica que se utiliza el módulo pam_listfile.so para la autenticación. Este módulo permite denegar el acceso a usuarios específicos basándose en una lista definida en un archivo. En este caso, el archivo /etc/apache2/denegados.txt contiene la lista de usuarios denegados. Si un usuario está en esta lista, se le negará el acceso.                                                                                                                                                                                                                                                                                       
